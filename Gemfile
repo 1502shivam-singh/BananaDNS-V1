@@ -73,5 +73,5 @@ end
 
 gem "vite_rails", "~> 3.0"
 
-gem 'sassc-rails'
+gem 'sass-rails', '>= 6'
 gem 'inline_svg'
