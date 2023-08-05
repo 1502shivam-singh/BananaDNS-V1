@@ -26,6 +26,8 @@ RUN apt-get install -y golang
 ENV GOPATH /root/go
 ENV PATH $GOPATH/bin:$PATH
 
+ENV RENDER_SERVICE_PORT 3000
+
 RUN go install github.com/DarthSim/overmind/v2@latest
 
 RUN chmod +x /app/bin/*
