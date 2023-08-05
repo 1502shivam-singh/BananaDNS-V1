@@ -1,0 +1,69 @@
+<%= render 'shared/header' %>
+
+<div class="heroSection">
+    <div class="heroSection-cta tc mv5">
+        <h1 class="heroSection-cta-head f2">Simplified DNS and Domain Registration Solutions</h1>
+        <h2 class="heroSection-cta-subhead f3">Secure and Efficient Domain Name System ( DNS ) Services</h2>
+        <signup-setup class="signup-wrapper mv4"></signup-setup>
+    </div>
+
+    <div class="center-con">
+        <div class="round">
+            <span class="round-1 rounds"></span>
+            <span class="round-2 rounds"></span>
+            <span class="round-3 rounds"></span>
+            <span class="round-4 rounds"></span>
+        </div>
+    </div>
+
+    <div class="heroSection-feat flex">
+        <div class="heroSection-feat-box flex justify-center items-center flex-column w-50 gap2 ph4">
+            <%= image_tag 'vectors/bolt.svg', class: "heroSection-feat-svg feat-svg-anim1 w3 h3" %>
+            <p class="heroSection-feat-desc feat-desc-anim1 tc lh-copy">
+                Experience Lightning-Fast DNS for Seamless Online Presence!
+            </p>
+        </div>
+        <div class="heroSection-feat-box flex justify-center items-center flex-column w-50 gap2 ph4">
+            <%= image_tag 'vectors/lock.svg', class: "heroSection-feat-svg feat-svg-anim2 w3 h3" %>
+            <p class="heroSection-feat-desc feat-desc-anim2 tc lh-copy">
+                Effortlessly Secure Your Online Identity with Simplified Domain Registration!
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<div class="benefits w-100 h-200 bg-yellow">
+    <div class="benefits-box benefits-box-1 flex w-100 h-50">
+        <div class="benefits-box-desc pa5 w-50 flex justify-center flex-column">
+            <h2 class="benefits-desc-head anim-text-head1 f1">Simple Domain Registration Process</h2>
+            <p class="benefits-desc-body anim-text-subhead1 mv3 f3 lh-copy">Registering your domain has never been easier with our streamlined process. Whether you're a seasoned website owner or just starting your  online journey, we're here to guide you effortlessly and step by step.</p>
+        </div>
+        <div class="benefits-box-image w-50 flex justify-center items-center ph4 bg-light-yellow">
+            <!-- <%= image_tag 'vectors/hosting.svg', class: "benefits-svg anim-svg-1 w-75 h-75" %> -->
+            <%= raw Rails.application.assets_manifest.find_sources('vectors/hosting.svg').first %>
+        </div>
+    </div>
+    <div class="benefits-box benefits-box-2 flex w-100 h-50">
+        <div class="benefits-box-image w-50 flex justify-center items-center ph4 bg-light-yellow">
+            <!-- <%= image_tag 'vectors/Stud.svg', class: "benefits-svg anim-svg-2 w-75 h-75" %> -->
+            <%= raw Rails.application.assets_manifest.find_sources('vectors/Stud.svg').first %>
+        </div>
+        <div class="benefits-box-desc pa5 w-50 flex justify-center flex-column">
+            <h2 class="benefits-desc-head anim-text-head2 f1">Wide Selection of TLDs and Extensions</h2>
+            <p class="benefits-desc-body anim-text-subhead2 mv3 f3 lh-copy">Choose from a vast selection of top-level domains (TLDs) and extensions to find your perfect match. Whether  you're looking for a traditional .com or a specific industry-focused  TLD, we've got you covered.</p>
+        </div>
+    </div>
+</div>
+
+<div class="bottom-cta flex items-center justify-center w-100" style="background-image: url(/assets/banana-bg-ff2996beb62f8a8b5a03fda63e309d409aa3bad22fb1c1b891c6f926310a7fb0.png); background-size: cover;">
+  <div class="bottom-cta-box bg-white tc mv5 ba b--black bw2 ph5 pv3 br2">
+    <h1 class="bottom-cta-head f2">DNS Management Made Simple</h1>
+    <h2 class="f3">Start Your Online Journey Today</h2>
+    <signup-setup class="signup-wrapper"></signup-setup>
+  </div>
+</div>
+
+<%= javascript_include_tag 'animations' %>
+
+<%= render 'shared/footer' %>
