@@ -1,21 +1,40 @@
+# Use an official Ruby runtime as a parent image
 FROM ruby:3.2.2
 
+# Set the working directory in the container to /app
+WORKDIR /app
+
+# Copy the Gemfile and Gemfile.lock into the container
+COPY Gemfile Gemfile.lock ./
+
+# Install any needed packages specified in Gemfile
+RUN bundle install
+
+# Copy the current directory contents into the container at /app
+COPY . /app
+
+# Install Node.js
 RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt-get install -y nodejs
 
-RUN npm install -g yarn
+# Install tmux
+RUN apt-get install -y tmux
 
-WORKDIR /app
+# Update apt
+RUN apt-get update
 
-COPY Gemfile Gemfile.lock ./
-RUN bundle install
+# Install Golang
+RUN apt-get install -y golang
 
-COPY . .
+# Set environment variables for Golang
+ENV GOPATH /root/go
+ENV PATH $GOPATH/bin:$PATH
 
-RUN gem install overmind
-ENV PATH /usr/local/bundle/bin:$PATH
+# Install overmind
+RUN go install github.com/DarthSim/overmind/v2@latest
 
 # Set PORT environment variable
 ENV PORT 3000
 
+# Run overmind when the container launches
 CMD ["overmind", "start", "-f", "Procfile"]
