@@ -17,7 +17,11 @@ COPY . /app
 RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt-get install -y nodejs
 
-RUN yarn
+# Install Yarn
+RUN npm install -g yarn
+
+# Install npm packages
+RUN yarn install
 
 # Install tmux
 RUN apt-get install -y tmux
