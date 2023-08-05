@@ -17,6 +17,8 @@ COPY . /app
 RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt-get install -y nodejs
 
+RUN yarn
+
 # Install tmux
 RUN apt-get install -y tmux
 
@@ -35,6 +37,9 @@ RUN go install github.com/DarthSim/overmind/v2@latest
 
 # Set permissions for scripts in bin directory
 RUN chmod +x /app/bin/*
+
+# Precompile assets
+RUN RAILS_ENV=production bundle exec rake assets:precompile
 
 # Set PORT environment variable
 ENV PORT 3000
