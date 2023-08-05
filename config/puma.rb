@@ -55,7 +55,7 @@ worker_timeout 3600 if ENV.fetch("RAILS_ENV", "development") == "development"
 
 port ENV.fetch("RENDER_SERVICE_PORT") { 3000 }
 
-environment ENV.fetch("RAILS_ENV") { "development" }
+environment ENV.fetch("RAILS_ENV") { "production" }
 
 bind "tcp://0.0.0.0:#{ENV.fetch("RENDER_SERVICE_PORT") { 3000 }}"
 
