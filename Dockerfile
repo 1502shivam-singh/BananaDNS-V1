@@ -13,5 +13,9 @@ RUN bundle install
 COPY . .
 
 RUN gem install overmind
+ENV PATH /usr/local/bundle/bin:$PATH
+
+# Set PORT environment variable
+ENV PORT 3000
 
 CMD ["overmind", "start", "-f", "Procfile"]
