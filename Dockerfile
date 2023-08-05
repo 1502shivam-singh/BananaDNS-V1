@@ -33,6 +33,9 @@ ENV PATH $GOPATH/bin:$PATH
 # Install overmind
 RUN go install github.com/DarthSim/overmind/v2@latest
 
+# Set permissions for scripts in bin directory
+RUN chmod +x /app/bin/*
+
 # Set PORT environment variable
 ENV PORT 3000
 
