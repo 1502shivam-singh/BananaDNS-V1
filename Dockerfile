@@ -2,6 +2,9 @@ FROM ruby:3.2.2
 
 WORKDIR /app
 
+# Set the Rails environment to production
+ENV RAILS_ENV=production
+
 COPY Gemfile Gemfile.lock ./
 
 RUN bundle install
